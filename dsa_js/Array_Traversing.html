@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traversing</title>
+</head>
+<body>
+    <input type="text" name="nbr" id="nbr">
+    <button type="submit" onclick="GetElement()">Get element</button>
+    
+    <script>
+        let data = [
+            {name:"Haseeb", class:"2nd Year", id:"12"},
+            {name:"Ali", class:"2nd Year", id:"13"},
+            {name:"Ahmed", class:"2nd Year", id:"14"},
+            {name:"Usman", class:"2nd Year", id:"15"},
+            {name:"Zubair", class:"2nd Year", id:"16"}
+        ]
+        // for(let i=0; i<data.length; i++){
+        //     document.write(`Array ${i} is ${data[i]} <br>`)
+        // }
+
+        function GetElement(){
+            let el = document.getElementById("nbr").value
+            if(el<data.length && typeof(parseInt(el)=== Number) && el>0){
+                alert(data[el].name);
+            }else{
+                alert("Please Enter Valid Input")
+            }
+        }
+    </script>
+</body>
+</html>

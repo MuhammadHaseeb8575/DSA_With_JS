@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="position" id="position" placeholder="Position">
+    <input type="text" name="InsertValue" id="InsertValue" placeholder="Insert Value">
+    <button type="submit" onclick="InsertValue()">Insert Value</button>
+    
+
+    <script>
+        // let data = [20,30,40,50,60,70];
+        // let a =  25;
+        // let position = 2;
+        // console.warn(data)
+
+        // for(i=data.length-1; i>=0; i--){
+        //     if(i>=position){
+        //         data[i+1] = data[i]
+
+        //         if(i === position){
+        //             data[i] = a;
+        //         }
+        //     }
+        // }console.warn(data)
+
+
+        function InsertValue(){
+        let data = [20,30,40,50,60,70];
+        let NewVal =  document.getElementById("InsertValue").value;
+        NewVal = parseInt(NewVal);
+        let position = document.getElementById("position").value;
+        debugger
+        console.warn(data)
+
+        for(i=data.length-1; i>=0; i--){
+            if(i>=position){
+                data[i+1] = data[i]
+
+                if(i == position){
+                    data[i] = NewVal;
+                }
+            }
+        }console.warn(data)
+        }
+    </script>
+</body>
+</html>
