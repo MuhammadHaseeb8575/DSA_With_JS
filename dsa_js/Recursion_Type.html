@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indirect Recursion In DSA</title>
+</head>
+<body>
+    <script>
+        let money = 100;
+        let TotalApple = 0;
+        let ApplePrice = 15;
+
+        function buyApple(x){
+            document.write("I have " ,x ," Rs ", TotalApple +"<br>")
+            if(x>0){
+                buyMore(x);
+            }else{
+                document.write("I dont have more money " + TotalApple + "<br>");
+            }
+        }
+
+        function buyMore(x){
+            TotalApple++;
+            buyApple(x-ApplePrice);
+            // document.write("buy more ", x +"<br>");
+        }
+        buyApple(money);
+    </script>
+</body>
+</html>
