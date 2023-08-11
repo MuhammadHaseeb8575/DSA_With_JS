@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack In DSA With JS</title>
+  </head>
+  <body>
+    <script>
+      let data = [];
+      let CurrentSize = data.length;
+      let MaxSize = 5;
+      function Push(NewValue) {
+        if (CurrentSize >= MaxSize) {
+          alert("Your Stack Is Already Full SO You Can't Add + NewValue");
+        }
+        data[CurrentSize] = NewValue;
+        CurrentSize += 1;
+      }
+
+      function Pop(){
+        if(CurrentSize>0){
+            CurrentSize-=1;
+            data.length = CurrentSize;
+        }
+        else{
+            alert("Stack Is Already Empty")
+        }
+      }
+
+      
+
+      Push(23);
+      Push(25);
+      Push(26);
+      Pop()
+
+      document.write(data)
+    </script>
+  </body>
+</html>

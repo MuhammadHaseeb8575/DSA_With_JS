@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack String Reverse In DSA</title>
+  </head>
+  <body>
+    <script>
+      let data = [];
+      let CurrentSize = data.length;
+      function Push(NewValue) {
+        data[CurrentSize] = NewValue;
+        CurrentSize += 1;
+      }
+
+      function Pop() {
+        lastItem = data[CurrentSize - 1];
+        CurrentSize -= 1;
+        data.length = CurrentSize;
+        return lastItem;
+      }
+
+      function ReverseStr(item) {
+        for (let i = 0; i < item.length; i++) {
+          Push(item[i]);
+        }
+        for (let i = 0; i < item.length; i++) {
+          item[i] = Pop();
+        }
+      }
+
+      let str = "Haseeb";
+      str = str.split("");
+      ReverseStr(str);
+      console.warn(str.join(""));
+      console.warn("stack", data);
+    </script>
+  </body>
+</html>

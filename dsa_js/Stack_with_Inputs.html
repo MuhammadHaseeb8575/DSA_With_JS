@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack In DSA With JS</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="NewValue"
+      id="NewValue"
+      placeholder="Enter Stack Element"
+    />
+    <button onclick="Push()">Add Value To STack</button>
+    <button onclick="Pop()">Remove Value From Stack</button>
+    <button onclick="Display()">Display All Elements</button>
+    <script>
+      let data = [];
+      let CurrentSize = data.length;
+      let MaxSize = 5;
+      function Push() {
+        let NewEl = document.getElementById("NewValue").value;
+        if (CurrentSize >= MaxSize) {
+          alert("Your Stack Is Already Full SO You Can't Add + NewValue");
+        } else {
+          data[CurrentSize] = NewEl;
+          CurrentSize += 1;
+          document.getElementById("NewValue").value = "";
+        }
+      }
+
+      function Pop() {
+        if (CurrentSize > 0) {
+          CurrentSize -= 1;
+          data.length = CurrentSize;
+        } else {
+          alert("Stack Is Already Empty");
+        }
+      }
+
+      function Display() {
+        for (let i = 0; i <= CurrentSize - 1; i++) {
+          console.warn(data[i]);
+        }
+      }
+
+      document.write(data);
+    </script>
+  </body>
+</html>

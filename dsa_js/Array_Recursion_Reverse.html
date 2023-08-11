@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Recursion width Reverse In DSA</title>
+  </head>
+  <body>
+    <script>
+      let data = [20, 34, 56, 45, 23,29,60,30];
+      let temp;
+      function CustomReverse(data,start,end) {
+        document.write(data + "<br>");
+        if (start <= end) {
+          let temp = data[start];
+          data[start] = data[end];
+          data[end] = temp;
+          CustomReverse(data ,start+1, end-1);
+        }
+        
+      }CustomReverse(data,0,data.length-1)
+
+
+    //   Default Function is reverce()
+    </script>
+  </body>
+</html>
