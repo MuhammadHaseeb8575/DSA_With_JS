@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List In JavaScript</title>
+</head>
+<body>
+    <h1>Linked List In JavaScript</h1>
+    
+
+    <script>
+        class List{
+            constructor(data){
+                this.Head = {
+                    value:data,
+                    next:null,
+                };
+
+                this.Tail = this.Head;
+                this.size = 1;
+            }
+
+            AddNode(nodeData){
+                let NewNode = {
+                    value:nodeData,
+                    next:null,
+                }
+
+                this.Tail.next = NewNode;
+                this.Tail = NewNode;
+                this.size++;
+            }
+
+            Traversing(){
+                let counter = 0;
+                let CurrentNode = this.Head;
+                while(counter < this.size){
+                    console.warn(CurrentNode);
+                    CurrentNode = CurrentNode.next;
+                    counter++;
+                }
+            }
+
+            DeleteNode(index){
+                let counter = 1;
+                let Lead  = this.Head;
+                if(index === 1){
+                    this.Head  = this.Head.next;
+                }
+                else{
+                    while(counter < index-1){
+                        Lead = Lead.next;
+                        counter++;
+
+                    }
+                    let nextNode = Lead.next.next;
+                    Lead.next  = nextNode;
+                    console.warn(Lead)
+                }
+            }
+
+            InsertNode(index, value){
+                let counter = 1;
+                let CurrentNode = this.Head;
+                while(counter > index){
+                    counter++;
+                    CurrentNode = CurrentNode.next;
+                }
+
+                let nextNode = CurrentNode.next;
+                CurrentNode.next = {
+                    value:value,
+                    next:nextNode,
+                }
+            }
+
+            SearchNode(data){
+                let Result = undefined;
+                let lead = this.Head;
+                let loop  = true;
+                while(loop){
+                    lead = lead.next;
+                    loop = !!lead;
+                    if(loop && lead.value === data){
+                        loop = false;
+                        Result = lead;
+                    }
+                }
+                console.warn(Result);
+            }
+        }
+
+        let list = new List(100);
+        list.AddNode(200);
+        list.AddNode(300);
+        list.AddNode(400);
+        list.AddNode(500);
+        list.AddNode(600);
+        list.AddNode(700);
+        list.AddNode(800);
+        list.AddNode(900);
+        list.AddNode(1000);
+        list.AddNode(1100);
+        console.warn(list);
+        list.Traversing();
+        list.DeleteNode(2);
+        list.InsertNode(2, 232);
+        list.SearchNode(1000);
+
+
+        
+        // let size  = 1;
+        // let data = 100;
+        // let Head = {
+        //     value:data,
+        //     next:null
+        // };
+        // let Tail = Head;
+
+        // function AddNode(NodeData){
+        //     let NewNode = {
+        //         value:NodeData,
+        //         next:null
+        //     }
+        //     Tail.next = NewNode;
+        //     Tail = NewNode;
+        //     size++;
+            
+            
+        // }
+        // AddNode(200);
+        // AddNode(300);
+        // AddNode(400);
+        // AddNode(500);
+        // console.log(Head)
+        // console.log(Tail)
+        // console.log(size)
+
+
+
+    </script>
+</body>
+</html>
